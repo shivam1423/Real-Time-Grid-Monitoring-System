@@ -1,0 +1,72 @@
+# Energy Grid Configuration
+# Define regions, generation types, thresholds, and carbon coefficients
+
+regions:
+  - Northeast
+  - Southeast
+  - Midwest
+  - Southwest
+  - West
+
+generation_types:
+  - Solar
+  - Wind
+  - Natural_Gas
+  - Coal
+  - Nuclear
+  - Hydro
+
+# Grid stability thresholds for anomaly detection
+thresholds:
+  frequency_deviation_hz: 0.015  # Maximum allowed deviation from 60 Hz
+  min_reserve_margin_percent: 5  # Minimum safe reserve margin
+  voltage_min_kv: 335  # Minimum transmission voltage
+  voltage_max_kv: 355  # Maximum transmission voltage
+  demand_spike_multiplier: 1.5  # Alert if demand exceeds 150% of hourly average
+
+# Carbon intensity coefficients (grams CO2 per kWh)
+carbon_coefficients:
+  Coal: 920
+  Natural_Gas: 450
+  Solar: 50
+  Wind: 10
+  Nuclear: 10
+  Hydro: 20
+
+# Cost per MWh for generation sources
+generation_costs:
+  Coal: 60
+  Natural_Gas: 70
+  Solar: 30
+  Wind: 25
+  Nuclear: 30
+  Hydro: 40
+
+# Typical generation capacity by region (MW)
+regional_base_capacity:
+  Northeast: 8000
+  Southeast: 12000
+  Midwest: 10000
+  Southwest: 7000
+  West: 9000
+
+# Streaming configuration
+streaming:
+  kafka_topic: energy_grid_stream
+  processed_topic: energy_grid_processed
+  batch_interval_seconds: 5
+  kafka_partitions: 5
+
+# Elasticsearch configuration
+elasticsearch:
+  index_name: energy_grid_metrics
+  host: localhost
+  port: 9200
+
+# MinIO configuration
+minio:
+  bucket_name: energy-grid-data
+  endpoint: localhost:9002
+  raw_data_prefix: raw
+  processed_data_prefix: processed
+

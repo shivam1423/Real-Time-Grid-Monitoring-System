@@ -1,0 +1,85 @@
+{
+  "mappings": {
+    "properties": {
+      "timestamp": {
+        "type": "date",
+        "format": "epoch_millis"
+      },
+      "region": {
+        "type": "keyword"
+      },
+      "grid_id": {
+        "type": "keyword"
+      },
+      "demand_mw": {
+        "type": "float"
+      },
+      "total_generation_mw": {
+        "type": "float"
+      },
+      "generation_mix_percent": {
+        "properties": {
+          "Solar": {"type": "float"},
+          "Wind": {"type": "float"},
+          "Natural_Gas": {"type": "float"},
+          "Coal": {"type": "float"},
+          "Nuclear": {"type": "float"},
+          "Hydro": {"type": "float"}
+        }
+      },
+      "generation_mw": {
+        "properties": {
+          "Solar": {"type": "float"},
+          "Wind": {"type": "float"},
+          "Natural_Gas": {"type": "float"},
+          "Coal": {"type": "float"},
+          "Nuclear": {"type": "float"},
+          "Hydro": {"type": "float"}
+        }
+      },
+      "grid_frequency_hz": {
+        "type": "float"
+      },
+      "voltage_kv": {
+        "type": "float"
+      },
+      "carbon_intensity_gco2_kwh": {
+        "type": "float"
+      },
+      "reserve_margin_percent": {
+        "type": "float"
+      },
+      "is_anomaly": {
+        "type": "boolean"
+      },
+      "alert_level": {
+        "type": "keyword"
+      },
+      "temperature_celsius": {
+        "type": "float"
+      },
+      "hour_of_day": {
+        "type": "integer"
+      },
+      "renewable_percentage": {
+        "type": "float"
+      },
+      "generation_cost_per_hour": {
+        "type": "float"
+      },
+      "location": {
+        "type": "geo_point"
+      }
+    }
+  },
+  "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 0,
+    "refresh_interval": "5s",
+    "index": {
+      "max_result_window": 10000
+    }
+  }
+}
+
+
