@@ -1,4 +1,7 @@
-# Real-time Energy Grid Monitoring System
+# Real-Time Grid Monitoring System
+
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Real--Time--Grid--Monitoring--System-blue?logo=github)](https://github.com/shivam1423/Real-Time-Grid-Monitoring-System)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Real-time energy grid monitoring system with streaming data processing, anomaly detection, and carbon intensity tracking.
 
@@ -75,8 +78,8 @@ Energy Grid Pulse is a comprehensive streaming data pipeline that monitors energ
 
 1. Clone the repository
 ```bash
-git clone <repository-url>
-cd "Real-Time Grid Monitoring System"
+git clone https://github.com/shivam1423/Real-Time-Grid-Monitoring-System.git
+cd Real-Time-Grid-Monitoring-System
 ```
 
 2. Run the complete pipeline
